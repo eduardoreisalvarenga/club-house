@@ -1,0 +1,11 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :post, label: "Enter a Joke",
+              input_html: { class: "textarea" },
+              wrapper: false, label_html: { class: "label" },
+              placeholder: "Write a joke.....", autofocus: true
+  %>
+
+  <%= f.button :submit, class: "btn btn-success"%>
+<% end %>
