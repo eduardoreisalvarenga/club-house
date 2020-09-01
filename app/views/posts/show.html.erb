@@ -1,9 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
+  <div class = "row">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @post.post %>
-</p>
+    <strong class = "title text-center">Post:</strong>
+    <div class = "col-md-6 card card-body bg-card">
+      <%= @post.post %>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %> |
+  <%= link_to 'Back', posts_path, class: "btn btn-warning" %>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+</div>
+
