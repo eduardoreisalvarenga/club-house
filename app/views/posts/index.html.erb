@@ -2,6 +2,6 @@
   <div class = "row">
       <%= render "posts" %>
           
-      <%= render "profile" %>
+      <% if user_signed_in? %><%= render "profile" %><% end %>
   </div>
 </div>

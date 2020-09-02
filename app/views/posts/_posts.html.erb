@@ -1,33 +1,40 @@
 <div class = "col-md-9">
 
-    <div class = "row">
-        <div class = "col-md-2">
-        <figure class="figure">
-            <img src = "https://bulma.io/images/placeholders/64x64.png">                  
-        </figure>
-        </div>
+    <% if user_signed_in? %>
 
-        <div class = "col-md">
-        <%= render 'form' %>
+        <div class = "row">
+            <div class = "col-md-2">
+            <figure class="figure">
+                <img src = "https://bulma.io/images/placeholders/64x64.png">                  
+            </figure>
+            </div>
+
+            <div class = "col-md">
+            <%= render 'form' %>
+            </div>
         </div>
-    </div>
+    <% end %>
 
 
     <% @posts.each do |post| %>
         
         <div class = "row">
         <div class = "col-md-2">
-            <figure class="figure">
-            <img src = "https://bulma.io/images/placeholders/64x64.png">                  
-            </figure>
+            <% if user_signed_in? %>
+                <figure class="figure">
+                <img src = "https://bulma.io/images/placeholders/64x64.png">                  
+                </figure>
+            <% end %>
         </div>
 
         <div class = "col-md-10 card card-body bg-card">
+            <% if user_signed_in? %><p>Create by: <%= post.user.name %></p><% end %>
             <%= post.post %>
         </div>
         
         </div>
-
+        
+        <% if user_signed_in? && current_user == post.user%>
         <div class = "row">
         <div class = "col-md-3 col-sm-3 ml-auto icons">
             <%= link_to post, class: "control" do %>
@@ -45,6 +52,7 @@
 
             </div>
         </div>
+        <% end %>
         
         <br>
     <% end %>
