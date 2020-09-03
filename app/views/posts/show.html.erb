@@ -1,0 +1,13 @@
+<div class = "container">
+  <div class = "row">
+
+    <strong class = "title text-center">Post:</strong>
+    <div class = "col-md-6 card card-body bg-card">
+      <%= @post.post %>
+    </div>
+  </div>
+  <%= link_to 'Edit', edit_post_path(@post), class: "btn btn-warning" %> |
+  <%= link_to 'Back', posts_path, class: "btn btn-warning" %>
+
+</div>
+
