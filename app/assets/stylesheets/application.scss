@@ -13,21 +13,17 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+@import "bootstrap";
 
- body {
-     background-color: #fbdcc4;
- }
+body {
+  background-color: #fbdcc4;
+}
 
- .bg-card {
-     background-color: #7d0633;
-     color: #fff;
- }
+.bg-card {
+  background-color: #7d0633;
+  color: #fff;
+}
 
- .control {
-     margin-left: 10px;
- }
-
- li a:hover {
-     background-color: none;
- }
+.control {
+  margin-left: 10px;
+}
